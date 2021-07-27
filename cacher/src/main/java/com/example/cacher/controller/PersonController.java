@@ -1,4 +1,4 @@
-package com.example.cacher;
+package com.example.cacher.controller;
 
 import com.example.cacher.model.Person;
 import com.example.cacher.repository.PersonRepository;
