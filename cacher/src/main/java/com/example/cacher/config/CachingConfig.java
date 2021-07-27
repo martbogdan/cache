@@ -21,7 +21,7 @@ public class CachingConfig {
 
     @Bean
     public CacheManager cacheManager() {
-        return new MyCustomCacheManager(cache(), "persons");
+        return new MyCustomCacheManager(elasticRepo);
     }
 
     @Primary
