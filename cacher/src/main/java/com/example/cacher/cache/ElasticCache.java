@@ -3,12 +3,9 @@ package com.example.cacher.cache;
 import com.example.cacher.model.Person;
 import com.example.cacher.repository.PersonElasticRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache;
 import org.springframework.cache.support.AbstractValueAdaptingCache;
 import org.springframework.data.domain.PageRequest;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Callable;
 
 public class ElasticCache extends AbstractValueAdaptingCache {
@@ -56,7 +53,9 @@ public class ElasticCache extends AbstractValueAdaptingCache {
 
     @Override
     public void put(Object key, Object value) {
-        this.elasticRepo.save((Person) value);
+        if (value != null) {
+            this.elasticRepo.save((Person) value);
+        }
     }
 
     @Override
