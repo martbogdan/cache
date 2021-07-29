@@ -17,12 +17,19 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("!======= Fetching Person ========!");
-        log.info("Id -> 1 " + personRepository.getById(1L));
-        log.info("Id -> 5 " + personRepository.getById(5L));
-        log.info("Id -> 1 " + personRepository.getById(1L));
-        log.info("Id -> 5 " + personRepository.getById(5L));
-        log.info("Id -> 1 " + personRepository.getById(1L));
-        log.info("Id -> 5 " + personRepository.getById(5L));
+        log.info("!======= Fetching Person By Id ========!");
+        for (int k=0; k<2; k++) {
+            for (long i=1; i<6; i++) {
+                log.info("Id -> " + i + " " + personRepository.getById(i));
+            }
+        }
+
+        log.info("!======= Fetching Person By Id and Name ========!");
+        for (int k=0; k<2; k++) {
+            for (long i=1; i<6; i++) {
+                log.info("Id -> " + i + " " + personRepository.getByIdAndName(i, "Name-" + i));
+            }
+        }
+
     }
 }

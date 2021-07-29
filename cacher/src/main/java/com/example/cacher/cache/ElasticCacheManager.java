@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @AllArgsConstructor
-public class MyCustomCacheManager implements CacheManager {
+public class ElasticCacheManager implements CacheManager {
 
     private final Map<String, Cache> cacheMap = new HashMap<>();
     private final PersonElasticRepo repo;

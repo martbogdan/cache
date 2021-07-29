@@ -13,8 +13,6 @@ import java.util.concurrent.Callable;
 
 public class ElasticCache extends AbstractValueAdaptingCache {
 
-    private final Map<String, Cache> cacheMap = new HashMap<>(16);
-
     @Autowired
     private PersonElasticRepo elasticRepo;
 
